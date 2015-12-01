@@ -22,12 +22,15 @@ function printToH2(m){
   $()
   if (newData["header_img"] !== null){
     newDiv.append("<img src='" + newData["header_img"] + "' />");
+  }else{
+    newDiv.append("<img src='" + "http://placehold.it/150x150" + "' />");
   }
 }
 
 function init(){
   dataIWant.forEach(printToH2);
   $("#filter").click(filter);
+  $('#search-button').click(locate);
 }
 
 $('#search').click(function(){
@@ -58,7 +61,14 @@ function filter(){
   $('div').remove();
   var newArray = dataIWant.filter(filterOnSearch, filterValue);
   for (var i=0; i<newArray.length; i++){
-    console.log(newArray[i]);
   }
   newArray.forEach(printToH2);
+}
+
+
+function locate(){
+  var valueToSearch = $('#locate').val();
+  $('div').css("background-color", "#ECECDA");
+  $('div').find('h2:contains(' + valueToSearch + ')').parent().parent().css("background-color", "#DA5C53");
+
 }

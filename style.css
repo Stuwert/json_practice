@@ -21,3 +21,12 @@ div img{
 a{
   text-decoration-style: none;
 }
+
+footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  height: 45px;
+  background-color: #FEED30;
+}
