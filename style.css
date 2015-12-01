@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+}
+
+div h2{
+  font-size: 16px;
+}
+
+div{
+  background-color: #ECECDA;
+  border-radius: 15px;
+  width: 60%;
+  padding: 1%;
+  margin: 20px;
+}
+
+div img{
+  margin: 0 auto;
+}
+
+a{
+  text-decoration-style: none;
+}

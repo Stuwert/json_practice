@@ -3,14 +3,16 @@ var dataIWant;
 function filterOnSearch(m){
   var newString = m.data['title'];
   var newVal = this.val();
-  newString = newString.toLowerCase();
-  newVal = newVal.toLowerCase();
-  console.log(newString);
-  if (newString.includes(newVal)){
-    return true;
-  }else{
-    return false;
-  }
+  console.log(newVal);
+  if(newVal != ""){
+    newString = newString.toLowerCase();
+    newVal = newVal.toLowerCase();
+    if (!newString.includes(newVal)){
+      return true;
+    }else {
+      return false;
+    }
+  }return true;
 }
 
 function printToH2(m){
@@ -54,7 +56,7 @@ $('#search').click(function(){
 function filter(){
   var filterValue = $('#filterInput');
   $('div').remove();
-  var newArray = dataIWant.filter(filterOnSearch, filterValue)
+  var newArray = dataIWant.filter(filterOnSearch, filterValue);
   for (var i=0; i<newArray.length; i++){
     console.log(newArray[i]);
   }
